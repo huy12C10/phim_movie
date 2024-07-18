@@ -1,0 +1,74 @@
+@use "../../scss/" as *;
+
+.movie-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 3rem;
+
+    @include tablet {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+
+    &__loadmore {
+        text-align: center;
+        margin-top: 2rem;
+
+        .small {
+            border: 2px solid $main-color;
+            background-color: transparent;
+            color: $main-color;
+            padding: 0.5rem 2rem;
+            font-size: 1.5rem;
+            font-weight: 900;
+            transition: background-color 0.3s ease, color 0.3s ease;
+
+            &:hover {
+                background-color: $main-color;
+                color: $white;
+            }
+        }
+    }
+}
+
+.movie-search {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 2rem;
+
+    input {
+        width: 100%;
+        padding-right: 4rem;
+        border: 2px solid $main-color;
+        border-radius: $border-radius;
+        height: 3rem;
+        font-size: 1.5rem;
+        padding-left: 1rem;
+
+        &::placeholder {
+            color: $txt-color;
+        }
+    }
+
+    button {
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100%;
+        background-color: $main-color;
+        color: $white;
+        border: none;
+        padding: 0 1rem;
+        font-size: 1.5rem;
+        font-weight: 900;
+        cursor: pointer;
+        transition: background-color 0.3s ease, color 0.3s ease;
+
+        @include mobile {
+            padding: 0 0.5rem;
+        }
+
+        
+    }
+}
